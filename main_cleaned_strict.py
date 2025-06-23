@@ -254,8 +254,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_sudah_bayar(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-        await query.answer()
-chat_id = query.from_user.id
+    await query.answer()
+    chat_id = query.from_user.id
     username = sheet_handler.get_user_by_chat_id(chat_id)
     profile = sheet_handler.get_profile_by_username(username)
     kode_invoice = sheet_handler.generate_invoice_code()
